@@ -6,7 +6,7 @@ import Pagination from "../components/Pagination";
 import Table from "./components/PointTable";
 import SearchFilter from "./components/SearchFilter";
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 7;
 
 export default function PointHistory() {
   const [startDate, setStartDate] = useState<string>("2024-01-01");
