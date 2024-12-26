@@ -1,0 +1,48 @@
+ .header {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     /* 가운데 정렬 */
+     gap: 0.5rem;
+     margin-bottom: 2rem;
+
+ }
+
+ .container {
+     /* Figma 디자인 */
+     width: 100%;
+     height: 5.625rem;
+     background-color: #ffffff;
+     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+     /* 드롭 섀도우 */
+     border: 4px solid #ffffff;
+     /* 흰색 테두리 */
+     border-radius: 12px;
+     /* 둥근 모서리 */
+     display: flex;
+     /* 내용 정렬 */
+     align-items: center;
+     justify-content: left;
+ }
+
+ .title {
+
+
+
+
+     color: rgba(0, 0, 0, 0.90);
+
+
+     font-size: 1.8rem;
+     font-style: normal;
+     font-weight: 700;
+     line-height: normal;
+     letter-spacing: -0.06188rem;
+
+
+ }
+
+ .img {
+     margin-left: 1.8rem;
+     margin-right: 1rem;
+ }

@@ -1,0 +1,36 @@
+ 
+.gradientBox {
+    max-width: 480px;
+    width: 480px;
+    height: 130px;
+    background: linear-gradient(180deg, #00E1E9 0%, #1E90EC 100%);
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px; /* padding 추가 */
+  
+}
+
+.pointTitle {
+    color: white;
+    font-size: 19px;
+    font-family: Pretendard;
+    font-weight: 700;
+    text-align: center; /* 중앙 정렬 */
+}
+
+.pointCount {
+    font-weight: bold;
+    font-size: 33px;
+    color: white;
+    margin-top: 5px; /* 약간의 여백 추가 */
+}
+
+.line {
+    
+    width: 1px; /* 세로선으로 변경 */
+    height: 80%; /* 전체 높이의 80% */
+    background: white;
+}  

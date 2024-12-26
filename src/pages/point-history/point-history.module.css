@@ -1,0 +1,141 @@
+.container {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* search fillter */
+
+
+.searchSection {
+  display: flex;
+
+  /* padding: 2.3125rem 2.625rem; */
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin: auto; */
+  background: rgba(30, 144, 236, 0.05);
+  ;
+
+  
+  border-radius: 1.56rem;
+  margin-bottom: 2rem;
+  width: 85.625rem;
+  height: 11.25rem;
+  flex-shrink: 0;
+
+
+/*  */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* 검색 섹션 아래 여백 */
+
+
+
+  display: flex;
+  justify-content: space-between; /* 좌우로 배치 */
+  align-items: flex-start; /* 위쪽 정렬 */
+  padding: 2rem;
+  background: rgba(30, 144, 236, 0.05);
+  border-radius: 1.56rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.searchFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+ 
+  flex: 1; /* 검색 필터가 남은 공간을 채움 */
+}
+
+
+
+
+.searchRow {
+  max-width: 80rem;
+flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: -5.5rem;
+  
+}
+
+
+
+
+.label {
+  color: #000;
+  font-size: 1.4375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.04313rem;
+  margin-left: 2.44rem;
+  margin-right: 1.87rem; 
+   
+}
+
+.dateRange {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input {
+  /* padding: 0.5rem; */
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  /* margin-top: 5rem; */
+
+
+}
+
+.searchRow > input {
+  width: 36.25rem;
+  height: 2.8125rem;
+  margin-left :10.15rem;
+  margin-bottom: 6rem;
+
+
+}
+
+
+
+.searchButton {
+  background: #3182ce;
+  color: white;
+  font-size: 1rem;
+  background: #3182ce;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.pointCardWrapper {
+  flex-shrink: 0; /* PointCard 크기 고정 */
+  margin-left: 5rem;
+  margin-bottom: 10rem;
+   /* 검색 필터와 간격 추가 */
+}
+ 
+.pointLabel {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.pointValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
