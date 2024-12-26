@@ -13,8 +13,8 @@ interface TableProps {
 }
 
 const PointTable = ({ transactions }: TableProps) => {
-  const handleEdit = (index: number) => {
-    console.log(`Edit item at index ${index}`);
+  const handleEdit = (data: PointTransaction) => {
+    console.log("수정된 데이터:", data);
   };
 
   const handleDelete = (index: number) => {
@@ -39,18 +39,19 @@ const PointTable = ({ transactions }: TableProps) => {
             <td>{transaction.store}</td>
             <td>{transaction.points}</td>
             <td>{transaction.reason}</td>
-            {/* <td>
-              <button className={styles.actionButton}>수정</button>
-              <button className={styles.deleteButton}>삭제</button>
-            </td> */}
             <td>
               <ActionButtons
-                onEdit={(data) => {
-                  console.log("수정된 데이터:", data);
+                onEdit={(updatedData) => {
+                  handleEdit({
+                    ...transaction,
+                    points: parseFloat(updatedData.points), // 문자열을 숫자로 변환
+                    reason: updatedData.reason,
+                  });
                 }}
                 onDelete={() => {
-                  console.log("삭제 완료");
+                  handleDelete(index);
                 }}
+                transaction={transaction} // 전달된 데이터
               />
             </td>
           </tr>
