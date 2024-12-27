@@ -5,8 +5,8 @@ import styles from "./CollectTable.module.css";
 export interface CollectTransaction {
   date: string;
   store: string;
-  phoneNumber: string;
-  address: string;
+  phone: string;
+  location: string;
   volume: string;
   request: string;
 }
@@ -34,8 +34,8 @@ const CollectTable = ({ transactions }: TableProps) => {
           <tr key={index} className={styles.tableRow}>
             <td>{transaction.date}</td>
             <td>{transaction.store}</td>
-            <td>{transaction.phoneNumber}</td>
-            <td>{transaction.address}</td>
+            <td>{transaction.phone}</td>
+            <td>{transaction.location}</td>
             <td>{transaction.volume}</td>
             <td>{transaction.request}</td>
           </tr>

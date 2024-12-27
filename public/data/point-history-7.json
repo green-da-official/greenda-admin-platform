@@ -672,236 +672,285 @@
         "reason": "161kg 수거",
         "points": 8050
     },
+    
     [
-      {
-          "date": "2024-07-15",
+        {
+          "date": "2024-07-24",
+          "store": "참참 돈까스",
+          "reason": "2kg 수거",
+          "points": 100
+        },
+        {
+          "date": "",
+          "store": "타다시제면소 율량",
+          "reason": "6kg 수거",
+          "points": 300
+        },
+        {
+          "date": "",
+          "store": "돈까스짱 동남지구점",
+          "reason": "12kg 수거",
+          "points": 600
+        },
+        {
+          "date": "",
+          "store": "왕천파닭 증평점",
+          "reason": "15kg 수거",
+          "points": 750
+        },
+        {
+          "date": "",
+          "store": "BBQ치킨 청주산남점",
+          "reason": "12kg 수거",
+          "points": 600
+        },
+        {
+          "date": "",
+          "store": "다사랑치킨 봉명점",
+          "reason": "11kg 수거",
+          "points": 550
+        },
+        {
+          "date": "",
+          "store": "연가돈까스 증평점",
+          "reason": "37kg 수거",
+          "points": "1,850"
+        },
+        {
+          "date": "",
+          "store": "안성맞춤(평택)휴게소",
+          "reason": "4kg 수거",
+          "points": 200
+        },
+        {
+          "date": "",
+          "store": "안성맞춤(제천)휴게소",
+          "reason": "9kg 수거",
+          "points": 450
+        },
+        {
+          "date": "",
+          "store": "금왕(평택)휴게소",
+          "reason": "11kg 수거",
+          "points": 550
+        },
+        {
+          "date": "",
+          "store": "금왕(제천)휴게소",
+          "reason": "9kg 수거",
+          "points": 450
+        },
+        {
+          "date": "",
+          "store": "천등산(평택)휴게소",
+          "reason": "10kg 수거",
+          "points": 500
+        },
+        {
+          "date": "",
+          "store": "천등산(제천)휴게소",
+          "reason": "7kg 수거",
+          "points": 350
+        },
+        {
+          "date": "",
+          "store": "치악(부산)휴게소",
+          "reason": "3kg 수거",
+          "points": 150
+        },
+        {
+          "date": "",
+          "store": "단양팔경(부산)휴게소",
+          "reason": "3kg 수거",
+          "points": 150
+        },
+        {
+          "date": "",
+          "store": "단양팔경(춘천)휴게소",
+          "reason": "16kg 수거",
+          "points": 800
+        },
+        {
+          "date": "",
+          "store": "에스가든웨딩홀",
+          "reason": "11kg 수거",
+          "points": 550
+        },
+        {
+          "date": "",
+          "store": "시즈너",
+          "reason": "83kg 수거",
+          "points": "4,150"
+        },
+        {
+          "date": "",
           "store": "진카츠",
           "reason": "9kg 수거",
           "points": 450
-      },
-      {
-          "date": "2024-07-15",
+        },
+        {
+          "date": "",
           "store": "빨간오뎅",
-          "reason": "16kg 수거",
-          "points": 800
-      },
-      {
-          "date": "2024-07-15",
-          "store": "왕천파닭 증평점",
-          "reason": "5kg 수거",
-          "points": 250
-      },
-      {
-          "date": "2024-07-15",
-          "store": "카츠동남 동남점",
-          "reason": "9kg 수거",
-          "points": 450
-      },
-      {
-          "date": "2024-07-15",
-          "store": "연가돈까스",
-          "reason": "11kg 수거",
-          "points": 550
-      },
-      {
-          "date": "2024-07-15",
-          "store": "민들레 돈까스",
-          "reason": "12kg 수거",
-          "points": 600
-      },
-      {
-          "date": "2024-07-15",
-          "store": "오유미당 충북혁신점",
+          "reason": "8kg 수거",
+          "points": 400
+        },
+        {
+          "date": "",
+          "store": "가마치통닭 음성점",
           "reason": "13kg 수거",
           "points": 650
-      },
-      {
-          "date": "2024-07-15",
-          "store": "흥부네돈까스",
-          "reason": "19kg 수거",
-          "points": 950
-      },
-      {
-          "date": "2024-07-15",
-          "store": "한올푸드",
-          "reason": "26kg 수거",
-          "points": 1300
-      },
-      {
-          "date": "2024-07-15",
-          "store": "선민물산",
-          "reason": "130kg 수거",
-          "points": 6500
-      },
-      {
-          "date": "2024-07-15",
-          "store": "이든F&C",
-          "reason": "179kg 수거",
-          "points": 8950
-      },
-      {
-          "date": "2024-07-15",
-          "store": "지푸드",
-          "reason": "124kg 수거",
-          "points": 6200
-      },
-      {
-          "date": "2024-07-18",
-          "store": "아이벗치킨 율량점",
-          "reason": "11kg 수거",
-          "points": 550
-      },
-      {
-          "date": "2024-07-18",
-          "store": "아이벗 치킨 용암점",
-          "reason": "8kg 수거",
-          "points": 400
-      },
-      {
-          "date": "2024-07-18",
-          "store": "돈까스짱 동남지구점",
-          "reason": "8kg 수거",
-          "points": 400
-      },
-      {
-          "date": "2024-07-18",
-          "store": "가마치통닭 충북혁신도시점",
-          "reason": "5kg 수거",
-          "points": 250
-      },
-      {
-          "date": "2024-07-18",
-          "store": "푸라닭 충북혁신도시점",
-          "reason": "2kg 수거",
-          "points": 100
-      },
-      {
-          "date": "2024-07-18",
-          "store": "왕천파닭 증평점",
-          "reason": "6kg 수거",
-          "points": 300
-      },
-      {
-          "date": "2024-07-18",
-          "store": "BHC치킨 증평점",
-          "reason": "11kg 수거",
-          "points": 550
-      },
-      {
-          "date": "2024-07-18",
-          "store": "BBQ치킨 청주산남점",
-          "reason": "11kg 수거",
-          "points": 550
-      },
-      {
-          "date": "2024-07-18",
+        },
+        {
+          "date": "",
           "store": "냉N돈 돈까스",
-          "reason": "28kg 수거",
-          "points": 1400
-      },
-      {
-          "date": "2024-07-18",
-          "store": "연가돈까스 모충점",
-          "reason": "3kg 수거",
-          "points": 150
-      },
-      {
-          "date": "2024-07-18",
-          "store": "명랑 핫도그 율량 2지구",
-          "reason": "10kg 수거",
-          "points": 500
-      },
-      {
-          "date": "2024-07-18",
-          "store": "가마치 통닭 산남점",
-          "reason": "5kg 수거",
-          "points": 250
-      },
-      {
-          "date": "2024-07-18",
-          "store": "왕천파닭 증평점",
-          "reason": "7kg 수거",
-          "points": 350
-      },
-      {
-          "date": "2024-07-18",
-          "store": "연가돈까스 증평점",
-          "reason": "14kg 수거",
-          "points": 700
-      },
-      {
-          "date": "2024-07-18",
-          "store": "청미래",
-          "reason": "964kg 수거",
-          "points": 48200
-      },
-      {
-          "date": "2024-07-22",
-          "store": "훈스 돈까스 오창본점",
-          "reason": "9kg 수거",
-          "points": 450
-      },
-      {
-          "date": "2024-07-22",
-          "store": "백돈 오창점",
-          "reason": "11kg 수거",
-          "points": 550
-      },
-      {
-          "date": "2024-07-22",
-          "store": "돈까스짱 동남지구점",
-          "reason": "9kg 수거",
-          "points": 450
-      },
-      {
-          "date": "2024-07-22",
-          "store": "왕천파닭 증평점",
-          "reason": "6kg 수거",
-          "points": 300
-      },
-      {
-          "date": "2024-07-22",
-          "store": "처갓집 오송점",
-          "reason": "10kg 수거",
-          "points": 500
-      },
-      {
-          "date": "2024-07-22",
-          "store": "BBQ치킨 청주산남점",
-          "reason": "5kg 수거",
-          "points": 250
-      },
-      {
-          "date": "2024-07-22",
+          "reason": "25kg 수거",
+          "points": "1,250"
+        },
+        {
+          "date": "",
+          "store": "안다미로 금왕점",
+          "reason": "13kg 수거",
+          "points": 650
+        },
+        {
+          "date": "",
+          "store": "오유미당 충북혁신점",
+          "reason": "12kg 수거",
+          "points": 600
+        },
+        {
+          "date": "",
           "store": "흥부네돈까스",
+          "reason": "12kg 수거",
+          "points": 600
+        },
+        {
+          "date": "",
+          "store": "금화왕돈까스",
+          "reason": "28kg 수거",
+          "points": "1,400"
+        },
+        {
+          "date": "",
+          "store": "충주(양평)휴게소",
+          "reason": "26kg 수거",
+          "points": "1,300"
+        },
+        {
+          "date": "",
+          "store": "충주(창원)휴게소",
+          "reason": "98kg 수거",
+          "points": "4,900"
+        },
+        {
+          "date": "",
+          "store": "괴산(창원)휴게소",
+          "reason": "40kg 수거",
+          "points": "2,000"
+        },
+        {
+          "date": "",
+          "store": "문경(양평)휴게소",
+          "reason": "23kg 수거",
+          "points": "1,150"
+        },
+        {
+          "date": "",
+          "store": "문경(창원)휴게소",
+          "reason": "21kg 수거",
+          "points": "1,050"
+        },
+        {
+          "date": "",
+          "store": "선산(양평)휴게소",
+          "reason": "25kg 수거",
+          "points": "1,250"
+        },
+        {
+          "date": "",
+          "store": "선산(창원)휴게소",
           "reason": "15kg 수거",
           "points": 750
-      },
-      {
-          "date": "2024-07-22",
-          "store": "천안시청",
-          "reason": "20kg 수거",
-          "points": 1000
-      },
-      {
-          "date": "2024-07-22",
-          "store": "한올푸드",
-          "reason": "29kg 수거",
-          "points": 1450
-      },
-      {
-          "date": "2024-07-22",
-          "store": "선민물산",
-          "reason": "100kg 수거",
-          "points": 5000
-      },
-      {
-          "date": "2024-07-22",
-          "store": "지푸드",
-          "reason": "161kg 수거",
-          "points": 8050
-      },
-      [
+        },
+        {
+          "date": "",
+          "store": "가마치 통닭 동남지구점",
+          "reason": "3kg 수거",
+          "points": 150
+        },
+        {
+          "date": "",
+          "store": "카츠동남 동남점",
+          "reason": "11kg 수거",
+          "points": 550
+        },
+        {
+          "date": "",
+          "store": "연가돈까스 증평점",
+          "reason": "10kg 수거",
+          "points": 500
+        },
+        {
+          "date": "",
+          "store": "이든F&C",
+          "reason": "153kg 수거",
+          "points": "7,650"
+        },
+        {
+          "date": "",
+          "store": "시즈너",
+          "reason": "150kg 수거",
+          "points": "7,500"
+        },
+        {
+          "date": "",
+          "store": "충남대학교 학생식당1",
+          "reason": "22kg 수거",
+          "points": "1,100"
+        },
+        {
+          "date": "",
+          "store": "충남대학교 학생식당3",
+          "reason": "21kg 수거",
+          "points": 1050
+        },
+        {
+          "date": "",
+          "store": "음성(하남)휴게소",
+          "reason": "18kg 수거",
+          "points": 900
+        },
+        {
+          "date": "",
+          "store": "오창(남이)휴게소",
+          "reason": "15kg 수거",
+          "points": 750
+        },
+        {
+          "date": "",
+          "store": "문의(청주)휴게소",
+          "reason": "9kg 수거",
+          "points": 450
+        },
+        {
+          "date": "",
+          "store": "문의(영덕)휴게소",
+          "reason": "8kg 수거",
+          "points": 400
+        },
+        {
+          "date": "",
+          "store": "속리산(청주)휴게소",
+          "reason": "13kg 수거",
+          "points": 650
+        },
+        {
+          "date": "",
+          "store": "화서(영덕)휴게소",
+          "reason": "18kg 수거",
+          "points": 900
+        }
+      ],
         {
             "date":"2024-07-24",
             "store":"참참 돈까스",
@@ -1288,6 +1337,5 @@
       }
     ]
   ]
-]
 
-]
+
