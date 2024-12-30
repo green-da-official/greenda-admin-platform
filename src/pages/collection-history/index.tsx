@@ -68,7 +68,7 @@ export default function CollectionHistory() {
       <Head>
         <title>그린다 수거 내역 리스트</title>
         <meta name="description" content="그린다 수거 내역 관리" />
-        <meta property="og:image" content="/thumbnail.png" />
+        <meta property="og:image" content="/thumbnail3.png" />
         <meta
           name="description"
           content="그린다 플랫폼 관리자의 수거 내역 관리 페이지 입니다."

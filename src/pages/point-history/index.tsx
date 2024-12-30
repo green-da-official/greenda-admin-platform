@@ -98,7 +98,7 @@ export default function PointHistory() {
       <Head>
         <title>그린다 포인트 내역 관리</title>
         <meta name="description" content="그린다 포인트 내역 관리" />
-        <meta property="og:image" content="/thumbnail.png" />
+        <meta property="og:image" content="/thumbnail2.png" />
         <meta
           name="description"
           content="그린다 플랫폼 관리자의 포인트 내역 관리 페이지 입니다."
