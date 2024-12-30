@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import styles from "./point-history.module.css";
@@ -8,16 +9,24 @@ import SearchFilter from "./components/SearchFilter";
 
 const PAGE_SIZE = 7;
 
+// 데이터 타입 정의
+interface PointTransaction {
+  date: string;
+  store: string;
+  points: number;
+  reason: string;
+}
+
 export default function PointHistory() {
   const [startDate, setStartDate] = useState<string>("2024-01-01");
   const [endDate, setEndDate] = useState<string>("2025-01-01");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [filteredTransactions, setFilteredTransactions] = useState<any[]>([]);
-  const [transactions, setTransactions] = useState<any[]>([]);
+  const [filteredTransactions, setFilteredTransactions] = useState<PointTransaction[]>([]);
+  const [transactions, setTransactions] = useState<PointTransaction[]>([]);
 
-   // 여러 JSON 파일 불러오기 및 통합
-   useEffect(() => {
+  // 여러 JSON 파일 불러오기 및 통합
+  useEffect(() => {
     const fetchTransactions = async () => {
       const fileNames = [
         "point-history-4.json",
@@ -43,7 +52,7 @@ export default function PointHistory() {
         );
 
         // 모든 데이터를 하나의 배열로 병합
-        const mergedData = dataArrays.flat();
+        const mergedData: PointTransaction[] = dataArrays.flat();
         setTransactions(mergedData);
         setFilteredTransactions(mergedData); // 기본적으로 모든 데이터 표시
       } catch (error) {

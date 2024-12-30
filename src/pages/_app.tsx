@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import localFont from "next/font/local";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { Toaster, toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster"
 
 
 const Pretendard = localFont({

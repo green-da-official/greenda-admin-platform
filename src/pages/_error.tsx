@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
+import { NextPageContext } from "next";
 
 function Error({ statusCode }: { statusCode: number }) {
   return (
@@ -13,7 +14,7 @@ function Error({ statusCode }: { statusCode: number }) {
   );
 }
 
-Error.getInitialProps = ({ res, err }: any) => {
+Error.getInitialProps = ({ res, err }: NextPageContext) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };

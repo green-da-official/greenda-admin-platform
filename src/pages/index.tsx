@@ -1,6 +1,6 @@
 // import PointCard from "./point-history/components/PointCard";
 import Head from "next/head";
-import { useState } from "react";
+
 import styles from "./index.module.css";
 
 
