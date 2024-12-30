@@ -1,12 +1,9 @@
-// import PointCard from "./point-history/components/PointCard";
+
 import Head from "next/head";
-
 import styles from "./index.module.css";
-
-
-// import Header from "";
-//
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../public/favicon.svg"
 export default function Home() {
   return (
     <>
@@ -20,7 +17,9 @@ export default function Home() {
 
         <div className={styles.container}>
           <h1 className={styles.title}>관리 페이지</h1>
+          <Image style={{ paddingBottom: "30px" }} src={Logo} alt="로고 이미지" />
           <div className={styles.buttonContainer}>
+           
             <Link href="/point-history" className={styles.button}>
               포인트 내역 관리
             </Link>

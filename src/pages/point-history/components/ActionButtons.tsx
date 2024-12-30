@@ -63,7 +63,10 @@ export default function ActionButtons({
     reason: transaction?.reason || "", // 기본값 설정
   });
 
-  const [toast, setToast] = useState<{ message: string; status: "success" | "error" } | null>(null);
+  const [toast, setToast] = useState<{
+    message: string;
+    status: "success" | "error";
+  } | null>(null);
 
   const openEditModal = () => setIsEditOpen(true);
   const closeEditModal = () => setIsEditOpen(false);
@@ -78,14 +81,20 @@ export default function ActionButtons({
   const handleSubmit = () => {
     onEdit(formData);
     closeEditModal();
-    setToast({ message: "포인트 내역이 성공적으로 수정되었습니다.", status: "success" });
+    setToast({
+      message: "포인트 내역이 성공적으로 수정되었습니다.",
+      status: "success",
+    });
     setTimeout(() => setToast(null), 3000);
   };
 
   const handleDelete = () => {
     onDelete();
     closeDeleteModal();
-    setToast({ message: "포인트 내역이 성공적으로 삭제되었습니다.", status: "error" });
+    setToast({
+      message: "포인트 내역이 성공적으로 삭제되었습니다.",
+      status: "error",
+    });
     setTimeout(() => setToast(null), 3000);
   };
 
@@ -94,7 +103,7 @@ export default function ActionButtons({
       {toast && (
         <Box
           position="fixed"
-          bottom="20px"
+          top="20px"
           left="50%"
           transform="translateX(-50%)"
           bg={toast.status === "success" ? "green.500" : "red.500"}
@@ -103,6 +112,10 @@ export default function ActionButtons({
           py={2}
           borderRadius="md"
           zIndex={1000}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
         >
           {toast.message}
         </Box>
@@ -116,7 +129,11 @@ export default function ActionButtons({
       </Button>
 
       {/* 수정 모달 */}
-      <Modal isOpen={isEditOpen} onRequestClose={closeEditModal} style={editModalStyles}>
+      <Modal
+        isOpen={isEditOpen}
+        onRequestClose={closeEditModal}
+        style={editModalStyles}
+      >
         <Text fontSize="lg" fontWeight="bold" mb={4}>
           포인트 내역 수정
         </Text>
@@ -197,7 +214,11 @@ export default function ActionButtons({
       </Modal>
 
       {/* 삭제 모달 */}
-      <Modal isOpen={isDeleteOpen} onRequestClose={closeDeleteModal} style={deleteModalStyles}>
+      <Modal
+        isOpen={isDeleteOpen}
+        onRequestClose={closeDeleteModal}
+        style={deleteModalStyles}
+      >
         <Text fontSize="lg" fontWeight="bold" mb={2} textAlign="center">
           포인트 내역을 삭제하시겠어요?
         </Text>
