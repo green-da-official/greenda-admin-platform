@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./PointTable.module.css";
 import ActionButtons from "./ActionButtons";
+
 interface PointTransaction {
   date: string;
   store: string;
@@ -12,7 +13,7 @@ interface TableProps {
   transactions: PointTransaction[];
 }
 
-const PointTable = ({ transactions }: TableProps) => {
+const PointTable = ({ transactions = [] }: TableProps) => {
   const handleEdit = (data: PointTransaction) => {
     console.log("수정된 데이터:", data);
   };
@@ -33,29 +34,37 @@ const PointTable = ({ transactions }: TableProps) => {
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction, index) => (
-          <tr key={index} className={styles.tableRow}>
-            <td>{transaction.date}</td>
-            <td>{transaction.store}</td>
-            <td>{transaction.points}</td>
-            <td>{transaction.reason}</td>
-            <td>
-              <ActionButtons
-                onEdit={(updatedData) => {
-                  handleEdit({
-                    ...transaction,
-                    points: parseFloat(updatedData.points), // 문자열을 숫자로 변환
-                    reason: updatedData.reason,
-                  });
-                }}
-                onDelete={() => {
-                  handleDelete(index);
-                }}
-                transaction={transaction} // 전달된 데이터
-              />
+        {transactions.length > 0 ? (
+          transactions.map((transaction, index) => (
+            <tr key={index} className={styles.tableRow}>
+              <td>{transaction.date}</td>
+              <td>{transaction.store}</td>
+              <td>{transaction.points}</td>
+              <td>{transaction.reason}</td>
+              <td>
+                <ActionButtons
+                  onEdit={(updatedData) => {
+                    handleEdit({
+                      ...transaction,
+                      points: parseFloat(updatedData.points),
+                      reason: updatedData.reason,
+                    });
+                  }}
+                  onDelete={() => {
+                    handleDelete(index);
+                  }}
+                  transaction={transaction}
+                />
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan={5} style={{ textAlign: "center" }}>
+              데이터가 없습니다.
             </td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );

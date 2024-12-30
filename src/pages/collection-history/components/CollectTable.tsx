@@ -16,7 +16,7 @@ interface TableProps {
   transactions: CollectTransaction[];
 }
 
-const CollectTable = ({ transactions }: TableProps) => {
+const CollectTable = ({ transactions = [] }: TableProps) => {
   return (
     <table className={styles.table}>
       <thead className={styles.tableHeader}>
@@ -30,16 +30,24 @@ const CollectTable = ({ transactions }: TableProps) => {
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction, index) => (
-          <tr key={index} className={styles.tableRow}>
-            <td>{transaction.date}</td>
-            <td>{transaction.store}</td>
-            <td>{transaction.phone}</td>
-            <td>{transaction.location}</td>
-            <td>{transaction.volume}</td>
-            <td>{transaction.request}</td>
+        {transactions.length > 0 ? (
+          transactions.map((transaction, index) => (
+            <tr key={index} className={styles.tableRow}>
+              <td>{transaction.date}</td>
+              <td>{transaction.store}</td>
+              <td>{transaction.phone}</td>
+              <td>{transaction.location}</td>
+              <td>{transaction.volume}</td>
+              <td>{transaction.request}</td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan={6} style={{ textAlign: "center" }}>
+              데이터가 없습니다.
+            </td>
           </tr>
-        ))}
+        )}
       </tbody>
     </table>
   );

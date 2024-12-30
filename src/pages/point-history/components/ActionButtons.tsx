@@ -5,10 +5,9 @@ import Modal from "react-modal";
 interface PointTransaction {
   date: string;
   store: string;
-  points: number;
-  reason: string; 
+  points: number | string; // points가 undefined일 경우 문자열로 초기화 가능
+  reason: string;
 }
-
 
 const editModalStyles = {
   content: {
@@ -57,9 +56,11 @@ export default function ActionButtons({
 }: ActionButtonsProps) {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+
+  // 초기값 설정: undefined를 방지하기 위해 기본값 사용
   const [formData, setFormData] = useState({
-    points: transaction.points.toString(), // 초기값 설정
-    reason: transaction.reason, // 초기값 설정
+    points: transaction?.points?.toString() || "0", // 기본값 설정
+    reason: transaction?.reason || "", // 기본값 설정
   });
 
   const [toast, setToast] = useState<{ message: string; status: "success" | "error" } | null>(null);
@@ -125,7 +126,7 @@ export default function ActionButtons({
             <input
               disabled
               name="date"
-              value={transaction.date} // 고정값
+              value={transaction?.date || "N/A"} // 데이터가 없을 경우 "N/A" 표시
               style={{
                 padding: "0.5rem",
                 width: "100%",
@@ -141,7 +142,7 @@ export default function ActionButtons({
             <input
               disabled
               name="store"
-              value={transaction.store} // 고정값
+              value={transaction?.store || "N/A"} // 데이터가 없을 경우 "N/A" 표시
               style={{
                 padding: "0.5rem",
                 width: "100%",
@@ -158,7 +159,7 @@ export default function ActionButtons({
             <Text mb={2}>적립/회수</Text>
             <input
               name="points"
-              placeholder={transaction.points.toString()}
+              placeholder={transaction?.points?.toString() || "0"}
               value={formData.points}
               onChange={handleChange}
               style={{
@@ -173,7 +174,7 @@ export default function ActionButtons({
             <Text mb={2}>사유</Text>
             <input
               name="reason"
-              placeholder={transaction.reason}
+              placeholder={transaction?.reason || ""}
               value={formData.reason}
               onChange={handleChange}
               style={{

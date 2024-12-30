@@ -7,14 +7,16 @@ import type { ThemeProviderProps } from "next-themes";
 import * as React from "react";
 import { LuMoon, LuSun } from "react-icons/lu";
 
-// ThemeProviderProps를 기반으로 빈 인터페이스 오류를 해결
+// 필요한 속성을 추가하여 빈 인터페이스 문제 해결
 export interface ColorModeProviderProps extends Partial<ThemeProviderProps> {
-  // 필요한 추가 속성을 여기에 명시
+  children?: React.ReactNode;  // children 속성 추가
 }
 
-export function ColorModeProvider(props: ColorModeProviderProps) {
+export function ColorModeProvider({ children, ...props }: ColorModeProviderProps) {
   return (
-    <ThemeProvider attribute="class" disableTransitionOnChange {...props} />
+    <ThemeProvider attribute="class" disableTransitionOnChange {...props}>
+      {children}
+    </ThemeProvider>
   );
 }
 
@@ -40,15 +42,15 @@ export function ColorModeIcon() {
   return colorMode === "light" ? <LuSun /> : <LuMoon />;
 }
 
-// 빈 인터페이스 정의를 피하기 위해 필요한 속성을 명시적으로 정의
+// 필요한 속성을 추가하여 빈 인터페이스 문제 해결
 interface ColorModeButtonProps extends Omit<IconButtonProps, "aria-label"> {
-  // 필요한 추가 속성을 여기에 명시
+  className?: string;  // 선택적 className 속성 추가
 }
 
 export const ColorModeButton = React.forwardRef<
   HTMLButtonElement,
   ColorModeButtonProps
->(function ColorModeButton(props, ref) {
+>(function ColorModeButton({ className, ...props }, ref) {
   const { toggleColorMode } = useColorMode();
   return (
     <ClientOnly fallback={<Skeleton boxSize="8" />}>
@@ -57,6 +59,7 @@ export const ColorModeButton = React.forwardRef<
         variant="ghost"
         aria-label="Toggle color mode"
         size="sm"
+        className={className}
         ref={ref}
         {...props}
         css={{

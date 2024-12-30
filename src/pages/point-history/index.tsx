@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import styles from "./point-history.module.css";
@@ -9,7 +8,6 @@ import SearchFilter from "./components/SearchFilter";
 
 const PAGE_SIZE = 7;
 
-// 데이터 타입 정의
 interface PointTransaction {
   date: string;
   store: string;
@@ -24,8 +22,9 @@ export default function PointHistory() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [filteredTransactions, setFilteredTransactions] = useState<PointTransaction[]>([]);
   const [transactions, setTransactions] = useState<PointTransaction[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  // 여러 JSON 파일 불러오기 및 통합
+  // 데이터 로드
   useEffect(() => {
     const fetchTransactions = async () => {
       const fileNames = [
@@ -41,28 +40,32 @@ export default function PointHistory() {
       ];
 
       try {
-        // 파일들을 병렬로 fetch
         const responses = await Promise.all(
           fileNames.map((fileName) => fetch(`/data/${fileName}`))
         );
-
-        // JSON 데이터를 병렬로 변환
         const dataArrays = await Promise.all(
-          responses.map((response) => response.json())
+          responses.map((response) => {
+            if (!response.ok) throw new Error(`Failed to load ${response.url}`);
+            return response.json();
+          })
         );
 
-        // 모든 데이터를 하나의 배열로 병합
         const mergedData: PointTransaction[] = dataArrays.flat();
-        setTransactions(mergedData);
-        setFilteredTransactions(mergedData); // 기본적으로 모든 데이터 표시
+        setTransactions(mergedData || []);
+        setFilteredTransactions(mergedData || []);
       } catch (error) {
-        console.error("JSON 파일 불러오기 오류:", error);
+        console.error("데이터 로드 오류:", error);
+        setTransactions([]);
+        setFilteredTransactions([]);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchTransactions();
   }, []);
 
+  // 검색 기능
   const handleSearch = () => {
     const filtered = transactions.filter(
       (transaction) =>
@@ -73,7 +76,7 @@ export default function PointHistory() {
           .includes(searchTerm.toLowerCase())
     );
     setFilteredTransactions(filtered);
-    setCurrentPage(1); // 검색 후 첫 페이지로 이동
+    setCurrentPage(1);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -110,7 +113,11 @@ export default function PointHistory() {
             onKeyDown={handleKeyDown}
           />
         </div>
-        <Table transactions={visibleItems} />
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <Table transactions={visibleItems} />
+        )}
         <Pagination
           currentPage={currentPage}
           totalItems={filteredTransactions.length}

@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import Header from "../collection-history/components/CollectionHeader";
 import { useState, useEffect } from "react";
@@ -19,6 +18,7 @@ export default function CollectionHistory() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [filteredTransactions, setFilteredTransactions] = useState<CollectTransaction[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   // 데이터 패칭
   useEffect(() => {
@@ -31,6 +31,8 @@ export default function CollectionHistory() {
         setFilteredTransactions(data); // 필터링 데이터 초기화
       } catch (error) {
         console.error("Error fetching data:", error);
+      } finally {
+        setLoading(false); // 로딩 상태 업데이트
       }
     };
     fetchData();
@@ -59,10 +61,7 @@ export default function CollectionHistory() {
 
   // 현재 페이지 데이터 계산
   const startRange = (currentPage - 1) * PAGE_SIZE;
-  const visibleItems = filteredTransactions.slice(
-    startRange,
-    startRange + PAGE_SIZE
-  );
+  const visibleItems = filteredTransactions.slice(startRange, startRange + PAGE_SIZE);
 
   return (
     <>
@@ -77,7 +76,6 @@ export default function CollectionHistory() {
       </Head>
 
       <div className={styles.container}>
-        {/* <Header title="수거 내역 리스트" imgAlt="수거 내역 리스트 아이콘" imgSrc="/truck.svg" /> */}
         <Header />
 
         {/* SearchFilter 컴포넌트 */}
@@ -95,7 +93,11 @@ export default function CollectionHistory() {
         </div>
 
         {/* CollectTable 컴포넌트 */}
-        <CollectTable transactions={visibleItems} />
+        {loading ? (
+          <p>Loading...</p> // 로딩 상태 표시
+        ) : (
+          <CollectTable transactions={visibleItems} />
+        )}
 
         {/* 페이지네이션 */}
         <Pagination
