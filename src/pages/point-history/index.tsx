@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import styles from "./point-history.module.css";

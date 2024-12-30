@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import Head from "next/head";
 import Header from "../collection-history/components/CollectionHeader";
 import { useState, useEffect } from "react";
