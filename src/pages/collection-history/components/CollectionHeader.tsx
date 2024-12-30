@@ -6,7 +6,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Image className={styles.img} src="./truck.svg" alt="" width={35} height={28}></Image>
-        <h1 className={styles.title}>수거 내역 리스트</h1>
+        <h1 className={styles.title}>수거 내역 관리</h1>
       </div>
     </header>
   );
