@@ -12,7 +12,12 @@ export default function Home() {
         <Head>
           <title>그린다 홈</title>
           <meta name="description" content="그린다 홈" />
+          <meta property="og:image" content="/thumbnail.png" />
+          <meta property="og:description" content="그린다 플랫폼 관리 페이지 홈입니다." />
+          <meta property="og:url" content="https://green-da-admin.vercel.app/" />
           <link rel="icon" href="/favicon.svg" />
+          
+
         </Head>
 
         <div className={styles.container}>

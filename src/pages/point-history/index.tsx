@@ -20,7 +20,9 @@ export default function PointHistory() {
   const [endDate, setEndDate] = useState<string>("2025-01-01");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [filteredTransactions, setFilteredTransactions] = useState<PointTransaction[]>([]);
+  const [filteredTransactions, setFilteredTransactions] = useState<
+    PointTransaction[]
+  >([]);
   const [transactions, setTransactions] = useState<PointTransaction[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -86,15 +88,24 @@ export default function PointHistory() {
   };
 
   const startRange = (currentPage - 1) * PAGE_SIZE;
-  const visibleItems = filteredTransactions.slice(startRange, startRange + PAGE_SIZE);
+  const visibleItems = filteredTransactions.slice(
+    startRange,
+    startRange + PAGE_SIZE
+  );
 
   return (
     <>
       <Head>
         <title>그린다 포인트 내역 관리</title>
+        <meta name="description" content="그린다 포인트 내역 관리" />
+        <meta property="og:image" content="/thumbnail.png" />
         <meta
           name="description"
           content="그린다 플랫폼 관리자의 포인트 내역 관리 페이지 입니다."
+        />
+        <meta
+          property="og:url"
+          content="https://green-da-admin.vercel.app/point-history"
         />
         <link rel="icon" href="/favicon.svg" />
       </Head>
@@ -113,11 +124,7 @@ export default function PointHistory() {
             onKeyDown={handleKeyDown}
           />
         </div>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          <Table transactions={visibleItems} />
-        )}
+        {loading ? <p>Loading...</p> : <Table transactions={visibleItems} />}
         <Pagination
           currentPage={currentPage}
           totalItems={filteredTransactions.length}
