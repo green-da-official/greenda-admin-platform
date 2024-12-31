@@ -66,7 +66,7 @@ export default function CollectionHistory() {
   return (
     <>
       <Head>
-        <title>그린다 수거 내역 리스트</title>
+        <title>그린다 수거 내역 관리</title>
         <meta name="description" content="그린다 수거 내역 관리" />
         <meta property="og:image" content="/thumbnail3.png" />
         <meta
