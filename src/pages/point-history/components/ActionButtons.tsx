@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Box, Text } from "@chakra-ui/react";
 import Modal from "react-modal";
+import styles from "./ActionButtons.module.css";
 
 interface PointTransaction {
   date: string;
@@ -120,16 +121,16 @@ export default function ActionButtons({
           {toast.message}
         </Box>
       )}
-
-      <Button bg="blue.600" onClick={openEditModal}>
-        수정
-      </Button>
-      <Button bg="red.500" ml={2} onClick={openDeleteModal}>
-        삭제
-      </Button>
-
+      <div className={styles.actionButton}>
+        <Button  bg="blue.600" onClick={openEditModal}>
+          수정
+        </Button>
+        <Button  bg="red.500"  onClick={openDeleteModal}>
+          삭제
+        </Button>
+      </div>
       {/* 수정 모달 */}
-      <Modal
+      <Modal className={styles.modal}
         isOpen={isEditOpen}
         onRequestClose={closeEditModal}
         style={editModalStyles}

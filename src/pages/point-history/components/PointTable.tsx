@@ -23,51 +23,51 @@ const PointTable = ({ transactions = [] }: TableProps) => {
   };
 
   return (
-    <table className={styles.table}>
-      <thead className={styles.tableHeader}>
-        <tr>
-          <th>날짜</th>
-          <th>상호명</th>
-          <th>적립/회수</th>
-          <th>사유</th>
-          <th>-</th>
-        </tr>
-      </thead>
-      <tbody>
-        {transactions.length > 0 ? (
-          transactions.map((transaction, index) => (
-            <tr key={index} className={styles.tableRow}>
-              <td>{transaction.date}</td>
-              <td>{transaction.store}</td>
-              <td>{transaction.points}</td>
-              <td>{transaction.reason}</td>
-              <td>
-                <ActionButtons
-                  onEdit={(updatedData) => {
-                    handleEdit({
-                      ...transaction,
-                      points: parseFloat(updatedData.points),
-                      reason: updatedData.reason,
-                    });
-                  }}
-                  onDelete={() => {
-                    handleDelete(index);
-                  }}
-                  transaction={transaction}
-                />
+    <div className={styles.tableContainer}>
+      <table className={styles.table}>
+        <thead className={styles.tableHeader}>
+          <tr>
+            <th>날짜</th>
+            <th>상호명</th>
+            <th>적립/회수</th>
+            <th>사유</th>
+            <th>-</th>
+          </tr>
+        </thead>
+        <tbody>
+          {transactions.length > 0 ? (
+            transactions.map((transaction, index) => (
+              <tr key={index} className={styles.tableRow}>
+                <td>{transaction.date}</td>
+                <td>{transaction.store}</td>
+                <td>{transaction.points}</td>
+                <td>{transaction.reason}</td>
+                <td>
+                  <ActionButtons
+                    onEdit={(updatedData) => {
+                      handleEdit({
+                        ...transaction,
+                        points: parseFloat(updatedData.points),
+                        reason: updatedData.reason,
+                      });
+                    }}
+                    onDelete={() => {
+                      handleDelete(index);
+                    }}
+                    transaction={transaction}
+                  />
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={5} style={{ textAlign: "center" }}>
+                데이터가 없습니다.
               </td>
             </tr>
-          ))
-        ) : (
-          <tr>
-            <td colSpan={5} style={{ textAlign: "center" }}>
-              데이터가 없습니다.
-            </td>
-          </tr>
-        )}
-      </tbody>
-    </table>
-  );
-};
-
+          )}
+        </tbody>
+      </table>
+    </div>
+  );}
 export default PointTable;
